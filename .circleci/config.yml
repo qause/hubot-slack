@@ -9,7 +9,7 @@ jobs:
       - image: cimg/node:16.8.0
     steps:
       - node/install-packages:
-          app-dir: ~/project
+          app-dir: /home/circleci/hublot-slack
           cache-path: ~/.npm 
           cache-version: v1 
           override-ci-command: npm install -g yo generator-hubot 
