@@ -6,7 +6,7 @@ orbs:
 jobs:
   example-job:
     docker:
-      - image: cimg/node:16.9.1
+      - image: cimg/node:16.8.0
     steps:
       - node/install-packages:
           app-dir: ./ 
