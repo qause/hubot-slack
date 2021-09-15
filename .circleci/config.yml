@@ -11,7 +11,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - node/install-npm:
-          version: lates 
+          version: 16.9.1 
 
 workflows:
   example-workflow:
