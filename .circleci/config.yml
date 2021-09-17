@@ -1,0 +1,39 @@
+# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
+version: 2.1
+
+orbs:
+  browser-tools: circleci/browser-tools@1.1.0
+
+jobs:
+  build:
+    docker:
+      - image: cimg/node:15.0.1-browsers
+    steps:
+      - browser-tools/install-browser-tools
+      - checkout
+      - run: |
+          node --version
+          java --version
+          google-chrome --version
+          npm install yo generator-hubot --version
+          npm fund
+          npm install npm@7.23.0 --save-dev
+          mkdir my-awesome-hubot && cd my-awesome-hubot
+          npm fund
+          npm install npm@7.23.0 --version
+          npm audit fix --force
+          npm fund  
+          echo "my artifact file" > /tmp/art-1;
+          mkdir /tmp/artifacts;
+          echo "my artifact files in a dir" > /tmp/artifacts/art-2;
+
+
+
+
+
+      - store_artifacts:
+          path: /tmp/art-1
+          destination: artifact-file
+      - store_test_results:
+          path: test-results
+          
