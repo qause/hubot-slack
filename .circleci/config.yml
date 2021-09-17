@@ -2,13 +2,21 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@4.1
-
-workflows:
-  sample:
-    jobs:
-      - node/test:
-          version: '15.1'
-          # This is the node version to use for the `cimg/node` tag
-          # Relevant tags can be found on the CircleCI Developer Hub
-          # https://circleci.com/developer/images/image/cimg/node
+  browser-tools: circleci/browser-tools@1.1.0
+jobs:
+  build:
+    docker:
+      - image: cimg/node:15.0.1-browsers
+    steps:
+      - browser-tools/install-browser-tools
+      - checkout
+      - run: |
+          node --version
+          java --version
+          google-chrome --version
+          npm install yo generator-hubot --save-dev
+          npm fund
+          npm install npm@7.23.0 --save-dev
+          mkdir my-awesome-hubot && cd my-awesome-hubot
+          npm fund
+          npm install npm@7.23.0 
