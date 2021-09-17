@@ -11,7 +11,7 @@ RUN npm install -g npm@7.23.0
 RUN npm fund
 RUN mkdir my-awesome-hubot && cd my-awesome-hubot
 RUN yo hubot --adapter=slack
-RUN HUBOT_SLACK_TOKEN=xoxb-2401417445287-2495753722914-ob25PEUD9GtHI9tgFCOFzyoK ./bin/hubot --adapter slack
+RUN HUBOT_SLACK_TOKEN=${{ secrets.HUBOT_SLACK_TOKEN }} ./bin/hubot --adapter slack
 
 COPY . .
 
