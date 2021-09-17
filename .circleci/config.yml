@@ -30,3 +30,5 @@ jobs:
       - store_artifacts:
           path: /tmp/art-1
           destination: artifact-file
+      - store_test_results:
+          path: test-results
