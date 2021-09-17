@@ -1,19 +1,23 @@
+# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
 version: 2.1
 
 orbs:
-  node: circleci/node@4.7.0
-
+  browser-tools: circleci/browser-tools@1.1.0
 jobs:
-  example-job:
+  build:
     docker:
-      - image: cimg/node:16.8.0
+      - image: cimg/node:15.0.1-browsers
     steps:
-      - node/install-packages:
-          app-dir: ~/
-          cache-path: ~/.npm 
-          cache-version: v1 
-          override-ci-command: npm install -g yo generator-hubot 
-workflows:
-  example-workflow:
-    jobs:
-      - example-job
+      - browser-tools/install-browser-tools
+      - checkout
+      - run: |
+          node --version
+          java --version
+          google-chrome --version
+          npm install yo generator-hubot --version
+          npm fund
+          npm install npm@7.23.0 --save-dev
+          mkdir my-awesome-hubot && cd my-awesome-hubot
+          npm fund
+          npm install npm@7.23.0 --version
+          npm audit fix --force          
