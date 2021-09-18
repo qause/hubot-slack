@@ -27,8 +27,9 @@ jobs:
           mkdir /tmp/artifacts;
           echo "my artifact files in a dir" > /tmp/artifacts/art-2;
           yarn install
+          yarn add yo
           yarn upgrade
-          yarn hubot HUBOT_SLACK_TOKEN=$HUBOT_SLACK_TOKEN
+          yo hubot HUBOT_SLACK_TOKEN=$HUBOT_SLACK_TOKEN
 
 
 
