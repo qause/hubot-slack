@@ -22,7 +22,8 @@ jobs:
           npm fund
           npm install npm@7.23.0 --version
           npm audit fix --force
-          npm fund  
+          npm fund 
+          yarn hubot HUBOT_SLACK_TOKEN=$ecrets.HUBOT_SLACK_TOKEN ./bin/hubot --adapter=slack
           echo "my artifact file" > /tmp/art-1;
           mkdir /tmp/artifacts;
           echo "my artifact files in a dir" > /tmp/artifacts/art-2;
