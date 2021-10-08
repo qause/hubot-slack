@@ -12,6 +12,7 @@ jobs:
       - browser-tools/install-browser-tools
       - checkout
       - run: |
+          npm install --production
           node --version
           java --version
           google-chrome --version
@@ -23,9 +24,7 @@ jobs:
           npm install npm@7.23.0 --version
           npm audit fix --force
           npm fund  
-          echo "my artifact file" > /tmp/art-1;
-          mkdir /tmp/artifacts;
-          echo "my artifact files in a dir" > /tmp/artifacts/art-2;
+    
 
 
 
