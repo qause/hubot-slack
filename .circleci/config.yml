@@ -17,7 +17,7 @@ jobs:
           java --version
           google-chrome --version
           mkdir my-awesome-hubot && cd my-awesome-hubot
-          npm i nyc
+          nyc install yo generator-hubot --version
 
       - store_artifacts:
           path: /tmp/art-1
