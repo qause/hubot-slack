@@ -12,11 +12,13 @@ jobs:
       - browser-tools/install-browser-tools
       - checkout
       - run: |
-          yarn --prodaction
+          yarn install --prodaction
           nyarnode --version
           java --version
           google-chrome --version
-          yarn add hubot --version
+          mkdir my-awesome-hubot && cd my-awesome-hubot
+          yarn add hubot
+
       - store_artifacts:
           path: /tmp/art-1
           destination: artifact-file
