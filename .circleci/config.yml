@@ -17,7 +17,7 @@ jobs:
           java --version
           google-chrome --version
           mkdir my-awesome-hubot && cd my-awesome-hubot
-          yarn add hubot
+          npm i nyc
 
       - store_artifacts:
           path: /tmp/art-1
