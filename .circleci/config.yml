@@ -12,8 +12,7 @@ jobs:
       - browser-tools/install-browser-tools
       - checkout
       - run: |
-          yarn install --prodaction
-          nyarnode --version
+          nyc install --prodaction
           java --version
           google-chrome --version
           mkdir my-awesome-hubot && cd my-awesome-hubot
