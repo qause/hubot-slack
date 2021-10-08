@@ -12,18 +12,11 @@ jobs:
       - browser-tools/install-browser-tools
       - checkout
       - run: |
-          npm install --prodaction
-          node --version
+          yarn --prodaction
+          nyarnode --version
           java --version
           google-chrome --version
-          npm install yo generator-hubot --version
-          npm fund
-          npm install npm@7.23.0 --save-dev
-          npm fund
-          npm install npm@7.23.0 --version
-          npm audit fix
-          npm audit fix --force
-          npm fund  
+          yarn add yo generator-hubot --version
           echo "my artifact file" > /tmp/art-1;
           mkdir /tmp/artifacts;
           echo "my artifact files in a dir" > /tmp/artifacts/art-2;
