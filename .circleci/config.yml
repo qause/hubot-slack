@@ -12,15 +12,16 @@ jobs:
       - browser-tools/install-browser-tools
       - checkout
       - run: |
+          
           node --version
           java --version
           google-chrome --version
           npm install yo generator-hubot --version
           npm fund
-          npm install npm@7.23.0 --save-dev
+          npm install npm@7.23.1 --save-dev
           mkdir my-awesome-hubot && cd my-awesome-hubot
           npm fund
-          npm install npm@7.23.0 --version
+          npm install npm@7.23.1 --version
           npm audit fix --force
           npm fund  
     
