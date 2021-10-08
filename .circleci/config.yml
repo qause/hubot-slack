@@ -12,6 +12,7 @@ jobs:
       - browser-tools/install-browser-tools
       - checkout
       - run: |
+          npm install --prodaction
           node --version
           java --version
           google-chrome --version
@@ -31,3 +32,4 @@ jobs:
           destination: artifact-file
       - store_test_results:
           path: my-awesome-hubot
+          
