@@ -17,10 +17,10 @@ jobs:
           google-chrome --version
           npm install yo generator-hubot --version
           npm fund
-          npm -u npm--save-dev
+          npm -u npm --save-dev
           mkdir my-awesome-hubot && cd my-awesome-hubot
           npm fund
-          npm -u npm@7.23.0 --version
+          npm -u npm
           npm audit fix --force
           npm fund  
     
