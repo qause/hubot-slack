@@ -5,6 +5,7 @@ WORKDIR /app
 
 COPY ["package.json", "package-lock.json*", "./"]
 
+RUN npm install --production
 RUN node --version
 RUN java --version
 RUN google-chrome --version
